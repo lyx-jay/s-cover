@@ -1,0 +1,44 @@
+{
+  "id": "3364500",
+  "name": "reactuse",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "288840",
+      "name": "project-solid-list",
+      "font_class": "project-solid-list",
+      "unicode": "e6cf",
+      "unicode_decimal": 59087
+    },
+    {
+      "icon_id": "1061079",
+      "name": "Blog",
+      "font_class": "blog",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "5994097",
+      "name": "moon",
+      "font_class": "moon",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
+      "icon_id": "21513707",
+      "name": "sun",
+      "font_class": "sun",
+      "unicode": "e6d2",
+      "unicode_decimal": 59090
+    },
+    {
+      "icon_id": "8474261",
+      "name": "github",
+      "font_class": "github",
+      "unicode": "e6b7",
+      "unicode_decimal": 59063
+    }
+  ]
+}
