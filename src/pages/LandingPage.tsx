@@ -1,8 +1,14 @@
-import Header from "../components/header/Header"
+import Cover from "../components/cover/Cover";
+import Header from "../components/header/Header";
+
+
+
+
 export default function LandingPage() {
   return (
     <>
       <Header />
+      <Cover />
     </>
   )
 }

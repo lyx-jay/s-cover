@@ -5,7 +5,7 @@ import Draft from "../draft/Draft";
 
 export default function Cover() {
   return (
-    <CoverStyles className="container">
+    <CoverStyles className="container cover">
       <div className="cover__wrapper">
         <Board />
         <Draft />

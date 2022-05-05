@@ -6,41 +6,36 @@ type Location = {
   y: number;
 }
 
-let isDrawing: boolean = false;
+// let isDrawing: boolean = false;
 const draw = (ctx: CanvasRenderingContext2D, location: Location) => {
-  if (isDrawing) {
-    ctx.beginPath();
-    ctx.arc(location.x, location.y, 10, 0, Math.PI*2);
-    ctx.closePath();
-    ctx.fill();
-  }
+  ctx.fillText('hello world', location.x, location.y);
 }
 
 export default function Draft() {
 
-  const [location, setLocation] = useState({x: -1, y: -1})
+  const [location, setLocation] = useState({ x: -1, y: -1 })
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
-    console.log(location)
+    // console.log(location)
     const ctx = canvasRef.current!.getContext('2d')!;
-    ctx.fillStyle = 'hotpink';
+    ctx.font = '48px serif';
     draw(ctx, location);
-  })
-  
-  const updateLocation = (e:MouseEvent) => {
-    const newLocation = {x: e.offsetX, y: e.offsetY}
+  }, [location])
+
+  const updateLocation = (e: MouseEvent) => {
+    // console.log(e)
+    const newLocation = { x: e.offsetX, y: e.offsetY }
     setLocation(newLocation)
   }
-  
+
 
   return (
     <DraftStyles className='draft'>
       <div className="draft__wrapper">
         <canvas ref={canvasRef}
-                onMouseMove={(e) => updateLocation(e.nativeEvent)}
-                onMouseDown={() => {isDrawing = true}}
-                onMouseUp={() => {isDrawing = false}}>
+          onClick={(e) => updateLocation(e.nativeEvent)}
+        >
         </canvas>
       </div>
     </DraftStyles>

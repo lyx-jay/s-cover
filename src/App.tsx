@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import GlobalStyles from './globalStyles/globalStyles';
-import Cover from './components/cover/Cover';
 import LandingPage from './pages/LandingPage';
 import themeList from './data/themeList';
 import ThemeContext from './context/themeContext';
@@ -21,7 +20,6 @@ export default function App() {
       <ThemeContext.Provider value={{ theme: themeColor, toggleTheme }}>
         <GlobalStyles theme={themeColor} />
         <LandingPage />
-        <Cover />
       </ThemeContext.Provider>
     </>
   );
