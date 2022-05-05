@@ -1,6 +1,3 @@
-# React & TypeScript & Webpack5 Template
+# s-cover
 
-include:
-  * light / dark mode, persistent storage
-  * styled-components
-  * ...
+It is a simple way to create your post cover
