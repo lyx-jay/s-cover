@@ -1,4 +1,4 @@
-import Cover from "../components/cover/Cover";
+import Draft from "../components/draft/Draft";
 import Header from "../components/header/Header";
 
 
@@ -8,7 +8,7 @@ export default function LandingPage() {
   return (
     <>
       <Header />
-      <Cover />
+      <Draft />
     </>
   )
 }
