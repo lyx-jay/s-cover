@@ -5,6 +5,8 @@ const BoardStyles = styled.div`
   height: 350px;
   /* border: 1px solid blue; */
   .board__wrapper {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100%;
     border: 1px solid red;
@@ -18,6 +20,9 @@ const BoardStyles = styled.div`
     a {
       padding: 0 2rem;
     }
+  }
+  .board__navigation__item {
+    flex: 1;
   }
 `;
 
