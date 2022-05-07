@@ -12,12 +12,12 @@ export default function tools() {
       <div className="rect">
         <span className='iconfont icon-text'></span>
       </div>
-      <div className="rect">2</div>
+      {/* <div className="rect">2</div>
       <div className="rect">3</div>
       <div className="rect">4</div>
       <div className="rect">5</div>
       <div className="rect">6</div>
-      <div className="rect">7</div>
+      <div className="rect">7</div> */}
     </ToolStyles>
   )
 }
