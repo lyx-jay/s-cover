@@ -3,7 +3,15 @@ import ToolStyles from './ToolStyles';
 export default function tools() {
   return (
     <ToolStyles className='toos_wrapper'>
-      <div className="rect">1</div>
+      <div className="rect">
+        <span className='iconfont icon-juxing'></span>
+      </div>
+      <div className="rect">
+        <span className='iconfont icon-radio-on'></span>
+      </div>
+      <div className="rect">
+        <span className='iconfont icon-text'></span>
+      </div>
       <div className="rect">2</div>
       <div className="rect">3</div>
       <div className="rect">4</div>

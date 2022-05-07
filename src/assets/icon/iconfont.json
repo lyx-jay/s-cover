@@ -6,6 +6,27 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "10048835",
+      "name": "矩形",
+      "font_class": "juxing",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "11488145",
+      "name": "text",
+      "font_class": "text",
+      "unicode": "e768",
+      "unicode_decimal": 59240
+    },
+    {
+      "icon_id": "18175740",
+      "name": "圆形",
+      "font_class": "radio-on",
+      "unicode": "ea6a",
+      "unicode_decimal": 60010
+    },
+    {
       "icon_id": "288840",
       "name": "project-solid-list",
       "font_class": "project-solid-list",
