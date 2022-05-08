@@ -1,20 +1,17 @@
 import { useEffect, useRef, useState } from 'react';
 import { fabric } from 'fabric';
+import { useAppSelector } from '../../store/hooks';
+import { selectToolType } from '../toolsItem/toolsItemSlice';
 import DraftStyles from './DraftStyles';
 
-// type Location = {
-//   x: number;
-//   y: number;
-// }
-
-// // let isDrawing: boolean = false;
-// const draw = (ctx: CanvasRenderingContext2D, location: Location) => {
-//   ctx.fillText('hello world', location.x, location.y);
-// }
 
 export default function Draft() {
 
-  const [location, setLocation] = useState({ x: -1, y: -1 })
+  const toolType = useAppSelector(selectToolType);
+
+  console.log(toolType)
+
+  const [location, setLocation] = useState({ x: 10, y: 10 })
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const draftRef = useRef<HTMLDivElement | null>(null);
 
@@ -35,6 +32,7 @@ export default function Draft() {
   }, [location])
 
   const updateLocation = (e: MouseEvent) => {
+    console.log(1)
     const newLocation = { x: e.offsetX, y: e.offsetY }
     setLocation(newLocation)
   }
