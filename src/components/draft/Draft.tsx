@@ -2,6 +2,7 @@ import { fabric } from 'fabric';
 import { useEffect, useRef, useState } from 'react';
 import { useAppSelector } from '../../store/hooks';
 import { selectToolType } from '../toolsItem/toolsItemSlice';
+import * as toolOptions from "../../utils/toolsOptions";
 import DraftStyles from './DraftStyles';
 
 let originCanvas: fabric.Canvas;
@@ -24,27 +25,14 @@ export default function Draft() {
     if (!originCanvas) {
       originCanvas = canvas;
     }
-    const rectOptions = {
-      left: location.x,
-      top: location.y,
-      fill: 'red',
-      width: 40,
-      height: 40,
-    }
 
-    const radioOptions = {
-      left: location.x,
-      top: location.y,
-      radius: 20,
-      fill: 'pink'
-    }
     if (toolType) {
       switch (toolType) {
         case 'juxing':
-          graphic = new fabric.Rect(rectOptions)
+          graphic = new fabric.Rect({...toolOptions.rectOptions, left:location.x, top:location.y})
           break;
         case 'radio-on':
-          graphic = new fabric.Circle(radioOptions)
+          graphic = new fabric.Circle({...toolOptions.circleOptions, left: location.x, top: location.y})
           break;
         default:
           break;
