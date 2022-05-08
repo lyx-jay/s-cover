@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
 import { fabric } from 'fabric';
+import { useEffect, useRef, useState } from 'react';
 import { useAppSelector } from '../../store/hooks';
 import { selectToolType } from '../toolsItem/toolsItemSlice';
 import DraftStyles from './DraftStyles';
@@ -9,9 +9,9 @@ export default function Draft() {
 
   const toolType = useAppSelector(selectToolType);
 
-  console.log(toolType)
+  // console.log(toolType)
 
-  const [location, setLocation] = useState({ x: 10, y: 10 })
+  const [location, setLocation] = useState({ x: -10, y: 10 })
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const draftRef = useRef<HTMLDivElement | null>(null);
 
@@ -31,20 +31,16 @@ export default function Draft() {
     canvas.add(rect);
   }, [location])
 
-  const updateLocation = (e: MouseEvent) => {
-    console.log(1)
-    const newLocation = { x: e.offsetX, y: e.offsetY }
-    setLocation(newLocation)
+  const updateLocation = (e:MouseEvent) => {
+    const newLocation = {x: e.offsetX, y: e.offsetY};
+    setLocation(newLocation);
   }
 
 
   return (
     <DraftStyles className='container'>
-      <div className="draft__wrapper" ref={draftRef}>
-        <canvas ref={canvasRef}
-          onClick={(e) => updateLocation(e.nativeEvent)}
-        >
-        </canvas>
+      <div className="draft__wrapper" ref={draftRef} onClick={(e) => updateLocation(e.nativeEvent)}>
+        <canvas ref={canvasRef}></canvas>
       </div>
     </DraftStyles>
   )
