@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3364500 */
-  src: url('iconfont.woff2?t=1651908875546') format('woff2'),
-       url('iconfont.woff?t=1651908875546') format('woff'),
-       url('iconfont.ttf?t=1651908875546') format('truetype');
+  src: url('iconfont.woff2?t=1652144539921') format('woff2'),
+       url('iconfont.woff?t=1652144539921') format('woff'),
+       url('iconfont.ttf?t=1652144539921') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-triangle:before {
+  content: "\e6de";
 }
 
 .icon-juxing:before {

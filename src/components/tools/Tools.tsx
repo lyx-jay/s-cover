@@ -7,6 +7,7 @@ export default function tools() {
       <ToolItem fontClass='juxing'/>
       <ToolItem fontClass='radio-on'/>
       <ToolItem fontClass='text'/>
+      <ToolItem fontClass='triangle'/>
     </ToolStyles>
   )
 }

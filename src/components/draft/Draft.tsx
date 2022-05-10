@@ -34,6 +34,12 @@ export default function Draft() {
         case 'radio-on':
           graphic = new fabric.Circle({...toolOptions.circleOptions, left: location.x, top: location.y})
           break;
+        case 'text':
+          graphic = new fabric.IText('Text', {...toolOptions.textOptions, left: location.x, top: location.y});
+          break;
+        case 'triangle':
+          graphic = new fabric.Triangle({...toolOptions.triangleOptions, left: location.x, top: location.y});
+          break;
         default:
           break;
       }

@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "8474392",
+      "name": "triangle",
+      "font_class": "triangle",
+      "unicode": "e6de",
+      "unicode_decimal": 59102
+    },
+    {
       "icon_id": "10048835",
       "name": "矩形",
       "font_class": "juxing",
