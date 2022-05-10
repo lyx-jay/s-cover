@@ -45,7 +45,7 @@ export default function Draft() {
       }
       canvas.add(graphic);
     }
-  }, [location])
+  })
 
   const updateLocation = (e: MouseEvent) => {
     const newLocation = { x: e.offsetX, y: e.offsetY };
