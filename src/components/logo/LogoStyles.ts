@@ -25,6 +25,10 @@ const LogoStyles = styled.div`
     font-size: 2.5rem;
     text-align: center;
   }
+  .search__results img {
+    width: fit-content;
+    height: fit-content;
+  }
 `;
 
 export default LogoStyles;

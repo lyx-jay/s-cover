@@ -1,7 +1,10 @@
 import { useState } from "react";
 import LogoStyles from "./LogoStyles";
 import { logoList } from "../../data/logoList";
-// import Svga from '../../assets/logos/100tb.svg';
+// import a from '../../assets/logos/100tb.svg';
+
+console.log(require(`../../assets/logos/100tb.svg`).default)
+console.log(require(`../../assets/logos/100tb.svg`))
 
 export default function Logo() {
 
@@ -26,8 +29,10 @@ export default function Logo() {
       <div className="search__results">
         {
           displayLogos(filterText).map(logoName => {
+            const path = require(`../../assets/logos/${logoName}.svg`);
+            console.log(path)
             return (
-              <span>{logoName}</span>
+              <img key={logoName} src={path} alt="" />
             )
           })
         }
