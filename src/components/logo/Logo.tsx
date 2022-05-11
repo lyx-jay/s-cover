@@ -1,22 +1,12 @@
 import { useState } from "react";
 import LogoStyles from "./LogoStyles";
 import { logoList } from "../../data/logoList";
-// import a from '../../assets/logos/100tb.svg';
-
-console.log(require(`../../assets/logos/100tb.svg`).default)
-console.log(require(`../../assets/logos/100tb.svg`))
 
 export default function Logo() {
 
-  const [filterText, setfilterText] = useState('npm');
-
-  function displayLogos(filterText: string): string[] {
-    if (filterText === "") {
-      return [];
-    }
-    return logoList.filter(logoName => logoName.includes(filterText))
-  }
-
+  const [filterText, setfilterText] = useState('react');
+  const displayLogos: string[] = filterText !== "" ? logoList.filter(logoName => logoName.includes(filterText)) : []
+  console.log(displayLogos)
   const handleInputChange = (newValue: string) => {
     setfilterText(newValue);
   }
@@ -28,11 +18,10 @@ export default function Logo() {
       </div>
       <div className="search__results">
         {
-          displayLogos(filterText).map(logoName => {
+          displayLogos.length !== 0 && displayLogos.map(logoName => {
             const path = require(`../../assets/logos/${logoName}.svg`);
-            console.log(path)
             return (
-              <img key={logoName} src={path} alt="" />
+              <img key={logoName} src={path} alt='' title={logoName}/>
             )
           })
         }
