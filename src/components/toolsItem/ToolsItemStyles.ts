@@ -14,6 +14,9 @@ const ToolsItemStyles = styled.div`
     left: 50%;
     margin-left: -2rem;
   }
+  span:hover {
+    cursor: pointer;
+  }
 `;
 
 export default ToolsItemStyles;

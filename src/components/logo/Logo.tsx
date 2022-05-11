@@ -1,12 +1,14 @@
 import { useState } from "react";
+import { useAppDispatch } from '../../store/hooks';
 import LogoStyles from "./LogoStyles";
 import { logoList } from "../../data/logoList";
+import { toggleLogo } from "./logoSlice";
 
 export default function Logo() {
 
+  const dispatch = useAppDispatch();
   const [filterText, setfilterText] = useState('react');
-  const displayLogos: string[] = filterText !== "" ? logoList.filter(logoName => logoName.includes(filterText)) : []
-  console.log(displayLogos)
+  const displayLogos: string[] = filterText !== "" ? logoList.filter(logoName => logoName.includes(filterText)) : [];
   const handleInputChange = (newValue: string) => {
     setfilterText(newValue);
   }
@@ -21,7 +23,11 @@ export default function Logo() {
           displayLogos.length !== 0 && displayLogos.map(logoName => {
             const path = require(`../../assets/logos/${logoName}.svg`);
             return (
-              <img key={logoName} src={path} alt='' title={logoName}/>
+              <img key={logoName}
+                   src={path}
+                   alt=''
+                   title={logoName}
+                   onClick={() => dispatch(toggleLogo(path)) }/>
             )
           })
         }

@@ -2,8 +2,9 @@ import { fabric } from 'fabric';
 import { useEffect, useRef, useState } from 'react';
 import { useAppSelector } from '../../store/hooks';
 import { selectToolType } from '../toolsItem/toolsItemSlice';
-import * as toolOptions from "../../utils/toolsOptions";
+import { selectLogoName } from '../logo/logoSlice';
 import DraftStyles from './DraftStyles';
+import * as toolOptions from "../../utils/toolsOptions";
 
 let originCanvas: fabric.Canvas;
 let graphic: fabric.Object;
@@ -11,7 +12,7 @@ let graphic: fabric.Object;
 export default function Draft() {
 
   const toolType = useAppSelector(selectToolType);
-
+  const logoName = useAppSelector(selectLogoName);
   const [location, setLocation] = useState({ x: -10, y: -10 })
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const draftRef = useRef<HTMLDivElement | null>(null);
@@ -45,7 +46,10 @@ export default function Draft() {
       }
       canvas.add(graphic);
     }
-  })
+    fabric.Image.fromURL(logoName, function(oImg) {
+      canvas.add(oImg);
+    }, {...toolOptions.imageOptions, left: location.x, top: location.y});
+  }, [location])
 
   const updateLocation = (e: MouseEvent) => {
     const newLocation = { x: e.offsetX, y: e.offsetY };

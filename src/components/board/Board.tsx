@@ -5,7 +5,6 @@ import { Link, Route, Routes } from 'react-router-dom';
 
 export default function Board() {
   return (
-    // <BrowserRouter>
     <BoardStyles className="container">
       <div className="board__wrapper">
         <div className="board__navigation">
@@ -21,6 +20,5 @@ export default function Board() {
         </div>
       </div>
     </BoardStyles>
-    // </BrowserRouter>
   )
 }

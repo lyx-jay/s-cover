@@ -12,6 +12,10 @@ type RectOptions = graphicOptions & {
 
 type TriangleOptions = RectOptions;
 
+type ImageOptions = graphicOptions & {
+  opacity?: number
+}
+
 type CircleOptions = graphicOptions & {
   radius: number
 }
@@ -43,4 +47,8 @@ export const triangleOptions: TriangleOptions = {
   width: 20,
   height: 30,
   fill: 'blue'
+}
+
+export const imageOptions: ImageOptions = {
+  opacity: 1
 }

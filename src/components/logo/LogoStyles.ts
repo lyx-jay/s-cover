@@ -44,6 +44,9 @@ const LogoStyles = styled.div`
     width: 7rem;
     height: 7rem;  
   }
+  .search__results img:hover {
+    cursor: pointer;
+  }
 `;
 
 export default LogoStyles;
