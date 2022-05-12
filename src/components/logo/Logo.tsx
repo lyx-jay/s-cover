@@ -1,8 +1,10 @@
+import _ from 'lodash'
 import LogoStyles from "./LogoStyles";
-import { SetStateAction, useRef, useState } from "react";
+import { SetStateAction, useState } from "react";
 import { useAppDispatch } from '../../store/hooks';
 import { logoList } from "../../data/logoList";
 import { toggleLogo } from "./logoSlice";
+
 
 export default function Logo() {
 
@@ -10,14 +12,16 @@ export default function Logo() {
   const [filterText, setfilterText] = useState('');
   const displayLogos: string[] = filterText !== "" ? logoList.filter(logoName => logoName.includes(filterText)) : [];
 
+  
   function handleInputChange(e: { target: { value: SetStateAction<string>; }; }) {
-    setfilterText(e.target.value);
+    setfilterText(e.target.value)
   }
+
   return (
     <LogoStyles className="logo__wrapper">
       <div className="search__logo">
         <input type="text" value={filterText}
-               onChange={handleInputChange} />
+                onChange={handleInputChange} />
         <span className="iconfont icon-search"></span>
       </div>
       <div className="search__results">

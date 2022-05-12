@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useAppSelector } from '../../store/hooks';
 import { selectToolType } from '../toolsItem/toolsItemSlice';
 import { selectLogoName } from '../logo/logoSlice';
+import { useLocation } from 'react-router-dom';
 import DraftStyles from './DraftStyles';
 import * as toolOptions from "../../utils/toolsOptions";
 
@@ -10,7 +11,7 @@ let originCanvas: fabric.Canvas;
 let graphic: fabric.Object;
 
 export default function Draft() {
-
+  const path = useLocation();
   const toolType = useAppSelector(selectToolType);
   const logoName = useAppSelector(selectLogoName);
   const [location, setLocation] = useState({ x: -10, y: -10 })
@@ -27,7 +28,7 @@ export default function Draft() {
       originCanvas = canvas;
     }
 
-    if (toolType) {
+    if (path.pathname.includes('tool') && toolType) {
       switch (toolType) {
         case 'juxing':
           graphic = new fabric.Rect({...toolOptions.rectOptions, left:location.x, top:location.y})
@@ -46,16 +47,18 @@ export default function Draft() {
       }
       canvas.add(graphic);
     }
-    fabric.Image.fromURL(logoName, function(oImg) {
-      canvas.add(oImg);
-    }, {...toolOptions.imageOptions, left: location.x, top: location.y});
+
+    if (path.pathname.includes('logo') && logoName) {
+      fabric.Image.fromURL(logoName, function(oImg) {
+        canvas.add(oImg);
+      }, {...toolOptions.imageOptions, left: location.x, top: location.y});
+    }
   }, [location])
 
   const updateLocation = (e: MouseEvent) => {
     const newLocation = { x: e.offsetX, y: e.offsetY };
     setLocation(newLocation);
   }
-
 
   return (
     <DraftStyles className='container'>

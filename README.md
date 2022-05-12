@@ -11,3 +11,5 @@ It is a simple way to create your post cover
 5. input filter
 
 6. 动态加载图片 require与import
+
+7. 对input使用debounce，无法回去到e.target.value
