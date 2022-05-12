@@ -46,6 +46,9 @@ const LogoStyles = styled.div`
   }
   .search__results img:hover {
     cursor: pointer;
+    width: 8rem;
+    height: 8rem;
+    transition: all ease-out 0.3s;
   }
 `;
 

@@ -8,8 +8,8 @@ export default function Board() {
     <BoardStyles className="container">
       <div className="board__wrapper">
         <div className="board__navigation">
-          <Link to="/board/tools">Tool</Link>
-          <Link to="/board/logos">Logo</Link>
+          <Link to="/board/tools">TOOL</Link>
+          <Link to="/board/logos">LOGO</Link>
         </div>
         <div className="board__navigation__item">
           <Routes>

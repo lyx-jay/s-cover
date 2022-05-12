@@ -1,21 +1,23 @@
-import { useState } from "react";
-import { useAppDispatch } from '../../store/hooks';
 import LogoStyles from "./LogoStyles";
+import { SetStateAction, useRef, useState } from "react";
+import { useAppDispatch } from '../../store/hooks';
 import { logoList } from "../../data/logoList";
 import { toggleLogo } from "./logoSlice";
 
 export default function Logo() {
 
   const dispatch = useAppDispatch();
-  const [filterText, setfilterText] = useState('react');
+  const [filterText, setfilterText] = useState('');
   const displayLogos: string[] = filterText !== "" ? logoList.filter(logoName => logoName.includes(filterText)) : [];
-  const handleInputChange = (newValue: string) => {
-    setfilterText(newValue);
+
+  function handleInputChange(e: { target: { value: SetStateAction<string>; }; }) {
+    setfilterText(e.target.value);
   }
   return (
     <LogoStyles className="logo__wrapper">
       <div className="search__logo">
-        <input type="text" value={filterText} onChange={(e) => handleInputChange(e.target.value)} />
+        <input type="text" value={filterText}
+               onChange={handleInputChange} />
         <span className="iconfont icon-search"></span>
       </div>
       <div className="search__results">
