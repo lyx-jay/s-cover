@@ -1,4 +1,3 @@
-import _ from 'lodash'
 import LogoStyles from "./LogoStyles";
 import { SetStateAction, useState } from "react";
 import { useAppDispatch } from '../../store/hooks';

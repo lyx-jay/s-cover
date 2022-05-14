@@ -1,9 +1,9 @@
 import ToolStyles from './ToolStyles';
 import ToolItem from '../toolsItem/ToolItem';
 
-export default function tools() {
+export default function Tools() {
   return (
-    <ToolStyles className='toos_wrapper'>
+    <ToolStyles className='tools_wrapper'>
       <ToolItem fontClass='juxing'/>
       <ToolItem fontClass='radio-on'/>
       <ToolItem fontClass='text'/>

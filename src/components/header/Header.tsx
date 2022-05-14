@@ -1,12 +1,18 @@
 import HeaderStyles from "./HeaderStyles";
 import ThemeSwitcher from "../themeSwitcher/themeSwitcher";
+import { Link } from "react-router-dom";
+import Tools from "../tools/Tools";
 
 export default function Header() {
   return (
     <HeaderStyles>
       <div className="container">
         <div className="header__wrapper">
-          <div className="header__logo">Lyx</div>
+          <div className="header__logo">Simple Cover</div>
+          <div className="header__menu">
+            <Link to="/board/logos">LOGO</Link>
+            <Tools />
+          </div>
           <div className="header__categories">
             <a href="https://github.com/lyx-jay" className="category__item" target="_blank" rel="noreferrer" title="Github">
               <span className="iconfont icon-github"></span>

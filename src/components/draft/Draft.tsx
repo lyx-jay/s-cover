@@ -18,6 +18,8 @@ export default function Draft() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const draftRef = useRef<HTMLDivElement | null>(null);
 
+  console.log(toolType)
+
   useEffect(() => {
     const draftSize = draftRef.current!.getBoundingClientRect();
     const canvas = originCanvas ? originCanvas : new fabric.Canvas(canvasRef.current, {
@@ -27,8 +29,8 @@ export default function Draft() {
     if (!originCanvas) {
       originCanvas = canvas;
     }
-
-    if (path.pathname.includes('tool') && toolType) {
+    //TODO: 在添加图形属性面板之后，这里需要添加路由判断，以避免重复绘制问题
+    if (toolType) {
       switch (toolType) {
         case 'juxing':
           graphic = new fabric.Rect({...toolOptions.rectOptions, left:location.x, top:location.y})
@@ -61,7 +63,7 @@ export default function Draft() {
   }
 
   return (
-    <DraftStyles className='container'>
+    <DraftStyles>
       <div className="draft__wrapper" ref={draftRef} onDoubleClick={(e) => updateLocation(e.nativeEvent)}>
         <canvas ref={canvasRef}></canvas>
       </div>

@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
 const DraftStyles = styled.div`
-  margin-top: 1rem !important;
+  flex: 1;
+  background-color: skyblue;
   .draft__wrapper {
     width: 100%;
-    height: 100%;
+    height: 949px;
     canvas {
-      border: 1px solid green;
+      border: 1px solid transparent;
     }
   }
 `;

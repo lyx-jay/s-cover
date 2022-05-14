@@ -1,19 +1,16 @@
 import styled from "styled-components";
 
 const LogoStyles = styled.div`
-  height: 282px;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
+  margin: 2rem 1rem;
   .search__logo {
-    width: 30rem;
+    width: 28rem;
     height: 4rem;
     display: flex;
     align-items: center;
     padding: 0.5rem 1rem;
     margin-bottom: 0.5rem;
     border: 1px solid black;
-    border-radius: 5px;
+    border-radius: 8px;
   }
   input {
     flex: 1;
@@ -29,25 +26,27 @@ const LogoStyles = styled.div`
     font-size: 2.5rem;
     text-align: center;
   }
-
   .search__results {
-    flex: 1;
+    width: 28rem;
+    height: 869px;
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    row-gap: 1rem;
     justify-items: center;
     align-items: center;
-    gap: 0.7rem;
-    overflow: auto;
+    grid-template-columns: repeat(3, 33.3%);
+    grid-template-rows: repeat(10, 1fr);
+    margin-top: 1rem;
+    overflow-y: auto;
   }
+
   .search__results img {
-    width: 7rem;
-    height: 7rem;  
+    width: 5rem;
+    height: 5rem;  
   }
   .search__results img:hover {
     cursor: pointer;
-    width: 8rem;
-    height: 8rem;
+    width: 6rem;
+    height: 6rem;
     transition: all ease-out 0.3s;
   }
 `;

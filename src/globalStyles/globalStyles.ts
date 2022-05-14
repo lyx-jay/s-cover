@@ -25,6 +25,7 @@ body {
   color: ${(props) => props.theme === themeList.light ? 'var(--textColorLight)' : 'var(--textColorDark)'};
 }
 
+
 li {
   list-style: none;
 }
@@ -39,9 +40,9 @@ a:hover {
 }
 
 .container {
-  max-width: 1400px;
-  width: 90%;
-  margin: 0 auto;
+  /* max-width: 1400px; */
+  width: 100%;
+  /* margin: 0 auto; */
   padding: 1.3rem 1rem;
 }
 

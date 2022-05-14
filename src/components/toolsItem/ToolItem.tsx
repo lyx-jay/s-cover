@@ -9,7 +9,7 @@ type PropsType = {
 export default function ToolItem(props: PropsType) {
 
   const dispatch = useAppDispatch();
-
+  // TODO:需要给每一个添加title属性，悬浮时显示文字
   return (
     <ToolsItemStyles
       className="tools__item"
