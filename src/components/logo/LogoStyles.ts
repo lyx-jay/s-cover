@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const LogoStyles = styled.div`
-  margin: 2rem 1rem;
   .search__logo {
     width: 28rem;
     height: 4rem;

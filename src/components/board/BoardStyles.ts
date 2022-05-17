@@ -5,6 +5,7 @@ const BoardStyles = styled.div`
   height: 100%;
   background-color: pink;
   border-radius: 8px;
+  padding: 2rem 1rem;
 `;
 
 export default BoardStyles;

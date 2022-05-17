@@ -15,3 +15,5 @@ console.log(typeof require(`../../assets/logos/100tb.svg`))  object
 const path = require(`../../assets/logos/${logoName}.svg`)   string
 
 7. 对input使用debounce，无法取到到e.target.value
+
+8. 跳转时，并不显示路由变化

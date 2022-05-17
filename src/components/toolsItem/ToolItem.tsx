@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useAppDispatch } from '../../store/hooks';
 import { toggleToolType } from './toolsItemSlice';
 import ToolsItemStyles from "./ToolsItemStyles";
@@ -14,7 +15,7 @@ export default function ToolItem(props: PropsType) {
     <ToolsItemStyles
       className="tools__item"
       onClick={() => dispatch(toggleToolType(props.fontClass))}>
-      <span className={`iconfont icon-${props.fontClass}`} title={props.fontClass}></span>
+      <Link className={`iconfont icon-${props.fontClass}`} title={props.fontClass} to="board/graphics"></Link>
     </ToolsItemStyles>
   )
 }
