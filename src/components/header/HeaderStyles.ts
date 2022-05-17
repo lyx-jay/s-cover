@@ -12,7 +12,7 @@ const HeaderStyles = styled.header`
       display: flex;
       height: 3rem;
       align-items: center;
-      margin-left: 18rem;
+      margin-left: 19.5rem;
       gap: 1rem;
     }
     .header__categories {

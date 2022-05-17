@@ -1,5 +1,4 @@
 import BoardStyles from "./BoardStyles";
-import Tools from '../tools/Tools';
 import Logo from "../logo/Logo";
 import { Route, Routes } from 'react-router-dom';
 

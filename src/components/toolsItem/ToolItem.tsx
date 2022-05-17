@@ -14,7 +14,7 @@ export default function ToolItem(props: PropsType) {
     <ToolsItemStyles
       className="tools__item"
       onClick={() => dispatch(toggleToolType(props.fontClass))}>
-      <span className={`iconfont icon-${props.fontClass}`}></span>
+      <span className={`iconfont icon-${props.fontClass}`} title={props.fontClass}></span>
     </ToolsItemStyles>
   )
 }
