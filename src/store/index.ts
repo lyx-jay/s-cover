@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import toolsItemReducer from '../components/toolsItem/toolsItemSlice';
 import logoReducer from '../components/logo/logoSlice';
+import graphicReducer from '../components/graphicPanel/graphicPanelSlice';
 
 export const store = configureStore({
   reducer: {
     toolsItemReducer,
-    logoReducer
+    logoReducer,
+    graphicReducer
   }
 })
 

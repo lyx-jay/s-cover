@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useAppSelector } from '../../store/hooks';
 import { selectToolType } from '../toolsItem/toolsItemSlice';
 import { selectLogoName } from '../logo/logoSlice';
+import { selectGraphicPropertyName, selectGraphicPropertyValue } from '../graphicPanel/graphicPanelSlice'
 import { useLocation } from 'react-router-dom';
 import DraftStyles from './DraftStyles';
 import * as toolOptions from "../../utils/toolsOptions";
@@ -11,14 +12,16 @@ let originCanvas: fabric.Canvas;
 let graphic: fabric.Object;
 
 export default function Draft() {
+
   const path = useLocation();
+  const propertyName = useAppSelector(selectGraphicPropertyName);
+  const propertyValue = useAppSelector(selectGraphicPropertyValue);
   const toolType = useAppSelector(selectToolType);
   const logoName = useAppSelector(selectLogoName);
   const [location, setLocation] = useState({ x: -10, y: -10 })
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const draftRef = useRef<HTMLDivElement | null>(null);
 
-  console.log(toolType)
 
   useEffect(() => {
     const draftSize = draftRef.current!.getBoundingClientRect();

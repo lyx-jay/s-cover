@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+// panel 属性的改变会影响 draft 的重绘
+
 const GraphicPanelStyles = styled.div`
   width: 100%;
   background-color: yellowgreen;
@@ -29,6 +31,9 @@ const GraphicPanelStyles = styled.div`
     height: 3rem;
     border-radius: 4px;
     background-color: white;
+  }
+  .color:hover {
+    cursor: pointer;
   }
 
   input[type="range"] {
