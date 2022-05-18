@@ -2,6 +2,7 @@ type graphicOptions = {
   left?: number;
   top?: number;
   stroke?: string;
+  strokeWidth?: number
 }
 
 type RectOptions = graphicOptions & {
@@ -51,4 +52,8 @@ export const triangleOptions: TriangleOptions = {
 
 export const imageOptions: ImageOptions = {
   opacity: 1
+}
+
+export {
+  type RectOptions
 }
