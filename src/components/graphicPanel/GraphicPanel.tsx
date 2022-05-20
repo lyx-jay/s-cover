@@ -7,7 +7,7 @@ import { modifyProperty } from './graphicPanelSlice';
 export default function GraphicPanel() {
 
   const dispatch = useAppDispatch();
-  const [borderValue, setBorderValue] = useState(1);
+  const [borderValue, setBorderValue] = useState<number>(1);
   // const [shadowValue, setShadowValue] = useState(0);
   // const [offsetValue, setOffsetValue] = useState(0);
   const fill_colors:string[] = ['#ffffff', '#38b6ff', '#8c52ff', '#cb6ce6', '#7ed957', '#c9e265', '#ffde59', '#ff914d', '#ff66c4','#000000' ];
@@ -15,10 +15,12 @@ export default function GraphicPanel() {
   // const shadow_colors:string[] = ['#5ce1e6', '#7ed957', '#ffde59', '#ff66c4'];
 
   // TODO:REACT 中 鼠标事件类型用什么表示
+  // NOTE: 该函数用来传递input的宽度值，该宽度值为number类型
   const handleInputValue = (e: any, type: string) => {
+    let value:number = parseInt(e.target.value);
     switch (type) {
       case 'strokeWidth':
-        setBorderValue(e.target.value);
+        setBorderValue(value);
         break;
       // case 'shadow_width':
       //   setShadowValue(e.target.value);
@@ -29,7 +31,7 @@ export default function GraphicPanel() {
       default:
         break;
     }
-    dispatch(modifyProperty(e.target.value, type))
+    dispatch(modifyProperty(value, type))
   }
 
   return (
@@ -57,7 +59,7 @@ export default function GraphicPanel() {
             <span>边框宽</span>
             <input type="range"
                    min={1}
-                   max={5}
+                   max={10}
                    value={borderValue}
                    onChange={(e) => handleInputValue(e, 'strokeWidth')}/>
           </div>

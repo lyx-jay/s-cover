@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import {State} from '../../store';
 
 type GraphicPropertyType = {
-  propertyValue: any;
+  propertyValue: string | number;
   propertyName: string;
 }
 
@@ -20,7 +20,7 @@ export const graphicSlice = createSlice({
         state.propertyValue = action.payload.propertyValue;
         state.propertyName = action.payload.propertyName;
       },
-      prepare: (propertyValue: string, propertyName: string) => {
+      prepare: (propertyValue: string | number, propertyName: string) => {
         return { payload: { propertyValue, propertyName } }
       }
     }

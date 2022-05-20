@@ -41,6 +41,12 @@ export default function Draft() {
         case 'radio-on':
           graphic = new fabric.Circle({ ...toolOptions.circleOptions, left: location.x, top: location.y })
           break;
+        case 'triangle':
+          graphic = new fabric.Triangle({ ...toolOptions.triangleOptions, left: location.x, top: location.y })
+          break;
+        case 'text':
+          graphic = new fabric.IText('TEXT', {...toolOptions.textOptions, left: location.x, top: location.y})
+          break;
         default:
           break;
       }
@@ -58,11 +64,8 @@ export default function Draft() {
     }
   }
 
-
-
-  // TODO:拆分useEffect
-
-  // 创建canvas，仅在挂载DOM时创建一次
+  // TODO:选中canvas上的object，board面板切换对应的panel
+  // NOTE:仅在组件挂载时，执行一次
   useEffect(() => {
     setCanvas(initCanvas());
   }, [])
