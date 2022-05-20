@@ -8,7 +8,9 @@ type graphicOptions = {
 type RectOptions = graphicOptions & {
   width: number;
   height: number;
+  strokeUniform?: boolean;
   fill?: string;
+  borderColor?: string;
 }
 
 type TriangleOptions = RectOptions;
@@ -31,7 +33,9 @@ export const rectOptions: RectOptions = {
   width: 40,
   height: 40,
   fill: 'transparent',
-  stroke: 'red'
+  stroke: 'red',
+  strokeUniform: true,
+  // borderColor: 'red'
 }
 
 export const circleOptions: CircleOptions = {
@@ -47,7 +51,9 @@ export const textOptions: TextOptions = {
 export const triangleOptions: TriangleOptions = {
   width: 20,
   height: 30,
-  fill: 'blue'
+  fill: 'blue',
+  strokeUniform: true,
+  borderColor: 'red'
 }
 
 export const imageOptions: ImageOptions = {

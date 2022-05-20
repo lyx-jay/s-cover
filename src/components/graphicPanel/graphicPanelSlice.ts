@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import {State} from '../../store';
 
 type GraphicPropertyType = {
-  propertyValue: string;
+  propertyValue: any;
   propertyName: string;
 }
 

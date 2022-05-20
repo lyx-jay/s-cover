@@ -7,25 +7,25 @@ import { modifyProperty } from './graphicPanelSlice';
 export default function GraphicPanel() {
 
   const dispatch = useAppDispatch();
-  const [borderValue, setBorderValue] = useState(0);
-  const [shadowValue, setShadowValue] = useState(0);
-  const [offsetValue, setOffsetValue] = useState(0);
+  const [borderValue, setBorderValue] = useState(1);
+  // const [shadowValue, setShadowValue] = useState(0);
+  // const [offsetValue, setOffsetValue] = useState(0);
   const fill_colors:string[] = ['#ffffff', '#38b6ff', '#8c52ff', '#cb6ce6', '#7ed957', '#c9e265', '#ffde59', '#ff914d', '#ff66c4','#000000' ];
   const border_colors:string[] = ['#5ce1e6', '#7ed957', '#ffde59', '#ff66c4'];
-  const shadow_colors:string[] = ['#5ce1e6', '#7ed957', '#ffde59', '#ff66c4'];
+  // const shadow_colors:string[] = ['#5ce1e6', '#7ed957', '#ffde59', '#ff66c4'];
 
   // TODO:REACT 中 鼠标事件类型用什么表示
   const handleInputValue = (e: any, type: string) => {
     switch (type) {
-      case 'border_width':
+      case 'strokeWidth':
         setBorderValue(e.target.value);
         break;
-      case 'shadow_width':
-        setShadowValue(e.target.value);
-        break;
-      case 'offset':
-        setOffsetValue(e.target.value);
-        break;
+      // case 'shadow_width':
+      //   setShadowValue(e.target.value);
+      //   break;
+      // case 'offset':
+      //   setOffsetValue(e.target.value);
+      //   break;
       default:
         break;
     }
@@ -43,7 +43,7 @@ export default function GraphicPanel() {
               return (
                 <div className='color'
                      key={fill_color}
-                     onClick={() => dispatch(modifyProperty(fill_color, 'fill_color'))}
+                     onClick={() => dispatch(modifyProperty(fill_color, 'fill'))}
                      style={{backgroundColor: `${fill_color}`}}></div>
               )
             })
@@ -56,10 +56,10 @@ export default function GraphicPanel() {
           <div className='width__slider'>
             <span>边框宽</span>
             <input type="range"
-                   min={0}
-                   max={20}
+                   min={1}
+                   max={5}
                    value={borderValue}
-                   onChange={(e) => handleInputValue(e, 'border_width')}/>
+                   onChange={(e) => handleInputValue(e, 'strokeWidth')}/>
           </div>
           <div className="border__colors">
             {
@@ -67,7 +67,7 @@ export default function GraphicPanel() {
                 return (
                   <div className='color'
                        key={border_color}
-                       onClick={() => dispatch(modifyProperty(border_color, 'border_color'))}
+                       onClick={() => dispatch(modifyProperty(border_color, 'stroke'))}
                        style={{backgroundColor: `${border_color}`}}></div>
                 )
               })
@@ -75,12 +75,12 @@ export default function GraphicPanel() {
           </div>
         </div>
       </div>
-      <div className="graphic__shadow">
+      {/* <div className="graphic__shadow">
         <span>阴影</span>
         <div className="shadow__settings">
           <div>
             <div className="shadow__width__slider">
-              <span>宽度</span>
+              <span>模糊度</span>
               <input type="range"
                    min={0}
                    max={20}
@@ -109,7 +109,7 @@ export default function GraphicPanel() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </GraphicPanelStyles>
   )
 }
