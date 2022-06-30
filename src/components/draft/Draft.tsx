@@ -1,12 +1,12 @@
 import { fabric } from 'fabric';
 import { useEffect, useRef, useState } from 'react';
-import { useAppSelector } from '../../store/hooks';
-import { selectToolType } from '../toolsItem/toolsItemSlice';
-import { selectLogoName } from '../logo/logoSlice';
-import { selectGraphicPropertyName, selectGraphicPropertyValue } from '../graphicPanel/graphicPanelSlice'
 import { useLocation } from 'react-router-dom';
-import DraftStyles from './DraftStyles';
+import { useAppSelector } from '../../store/hooks';
 import * as toolOptions from "../../utils/toolsOptions";
+import { selectGraphicPropertyName, selectGraphicPropertyValue } from '../graphicPanel/graphicPanelSlice';
+import { selectLogoName } from '../logo/logoSlice';
+import { selectToolType } from '../toolsItem/toolsItemSlice';
+import DraftStyles from './DraftStyles';
 
 let graphic: fabric.Object;
 let lastToolType: string;
@@ -26,6 +26,7 @@ export default function Draft() {
 
   const initCanvas = () => {
     const draftSize = draftRef.current!.getBoundingClientRect();
+    console.log(draftSize)
     const canvas = new fabric.Canvas('canvas');
     canvas.setWidth(draftSize.width);
     canvas.setHeight(draftSize.height);

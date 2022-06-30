@@ -9,6 +9,7 @@ const DraftStyles = styled.div`
 
     canvas {
       border: 1px solid skyblue;
+      border-radius: 8px;
     }
   }
 `;
