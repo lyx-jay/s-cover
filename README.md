@@ -21,3 +21,5 @@ const path = require(`../../assets/logos/${logoName}.svg`)   string
 9. 严格模式下，useEffect 会执行两次。这导致在创建 fabric.canvas 时，会创建两个包裹的canvas。由此引起的问题是，在 canvas 上绘制的图形无法选取.
 
    解决方法为：关闭严格模式
+
+10. overflow生效的前提条件是，必须为div指定高度，flex:1这种形式无法满足

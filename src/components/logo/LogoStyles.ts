@@ -27,7 +27,7 @@ const LogoStyles = styled.div`
   }
   .search__results {
     width: 28rem;
-    height: 869px;
+    height: 800px;
     display: grid;
     row-gap: 1rem;
     justify-items: center;
@@ -44,9 +44,6 @@ const LogoStyles = styled.div`
   }
   .search__results img:hover {
     cursor: pointer;
-    width: 6rem;
-    height: 6rem;
-    transition: all ease-out 0.3s;
   }
 `;
 
