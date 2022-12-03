@@ -6,6 +6,12 @@ const BoardStyles = styled.div`
   background-color: pink;
   border-radius: 8px;
   padding: 2rem 1rem;
+  .board__wrapper {
+    height: 100%;
+    .board__items {
+      height: 100%;
+    }
+  }
 `;
 
 export default BoardStyles;

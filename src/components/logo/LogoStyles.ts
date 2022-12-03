@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const LogoStyles = styled.div`
+  height: 100%;
   .search__logo {
     width: 28rem;
     height: 4rem;
@@ -27,7 +28,7 @@ const LogoStyles = styled.div`
   }
   .search__results {
     width: 28rem;
-    height: 800px;
+    height: calc(100% - 4rem);
     display: grid;
     row-gap: 1rem;
     justify-items: center;
