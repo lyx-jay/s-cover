@@ -1,17 +1,16 @@
 <script setup lang="ts">
 import Header from './components/header/Header.vue';
+import Board from './components/board/Board.vue';
+import Draft from './components/draft/Draft.vue';
 </script>
 
 <template>
-  <Header />
-  <div text-center font-sans p4>
-    <div logo />
-    <div text-blue5 text-lg>
-      Hello UnoCSS + Vue
+  <div h-screen flex flex-col p-l-5 p-r-5 p-b-5>
+    <Header />
+    <div flex-1 flex items-center gap-3>
+      <Board />
+      <Draft />
     </div>
-    <div i-custom-icon />
-    <div i-custom-multi-line-attr />
-    <div hidden class="bg-[url(../src/uno.svg)] bg-[url(/uno.svg)]" />
   </div>
 </template>
 
