@@ -19,9 +19,11 @@ const imgSrcList = computed(() => {
       <input type="text" flex-1 b-0 outline-0 v-model="inputText">
       <div i-ps-magnifying-glass w-8 h-5></div>
     </div>
-    <div flex-1 overflow-auto flex gap-6 flex-wrap>
-      <div v-for="imgSrc in imgSrcList" w-12 h-12 cursor-pointer>
-        <img :src="imgSrc" alt="logo" w-full h-full>
+    <div flex-1 overflow-auto>
+      <div flex gap-6 flex-wrap>
+        <div v-for="imgSrc in imgSrcList" w-12 h-12 cursor-pointer>
+          <img :src="imgSrc" alt="logo" w-full h-full>
+        </div>
       </div>
     </div>
   </div>
