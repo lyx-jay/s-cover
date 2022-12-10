@@ -7,7 +7,7 @@ import Draft from './components/draft/Draft.vue';
 <template>
   <div h-screen flex flex-col p-l-5 p-r-5 p-b-5>
     <Header />
-    <div flex-1 flex items-center gap-3>
+    <div flex-1 flex items-center gap-6 overflow-auto>
       <Board />
       <Draft />
     </div>
