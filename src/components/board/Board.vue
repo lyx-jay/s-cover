@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, watch } from 'vue'
-import logoData from '../../config/logo-data'
-import { getImageUrl, Debounce } from '../../utils'
+import { computed, ref } from 'vue';
+import logoData from '../../config/logo-data';
+import { getImageUrl } from '../../utils';
 
 const inputText = ref('')
 const imgSrcList = computed(() => {
