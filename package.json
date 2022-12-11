@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@iconify-json/ps": "^1.1.3",
+    "@types/node": "^18.11.13",
     "fabric": "^5.2.4",
     "vue": "^3.2.41",
     "vuex": "^4.0.2"

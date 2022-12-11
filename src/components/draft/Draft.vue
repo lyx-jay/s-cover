@@ -2,7 +2,7 @@
 import { fabric } from 'fabric';
 import { computed, inject, onMounted, onUnmounted, Ref, ref, watch } from 'vue';
 import { useStore } from 'vuex';
-import { Debounce } from '../../utils';
+import { Debounce } from '@/utils';
 
 const store = useStore()
 const logoName = computed(() => store.state.logo.logoName)

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import { useStore } from 'vuex';
-import logoData from '../../config/logo-data';
-import { getImageUrl } from '../../utils';
+import logoData from '@/config/logo-data';
+import { getImageUrl } from '@/utils';
 
 const inputText = ref('')
 const imgSrcList = computed(() => {
