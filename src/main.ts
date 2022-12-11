@@ -1,9 +1,10 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
 import 'uno.css'
+import { createApp } from 'vue'
+import App from './App.vue'
 import store from './store'
+import './style.css'
 
-createApp(App)
-  .use(store)
+const app = createApp(App)
+app.provide('$canvas', null)
+app.use(store)
   .mount('#app')
