@@ -4,13 +4,12 @@
 
 <template>
   <header flex justify-between items-center h-x p-t-6 p-b-6>
-    <div>Make Cover Simple</div>
+    <div text-2xl>Make Cover Simple</div>
     <div flex justify-between items-center gap-5>
-      <div i-ps-github-alt title="github"></div>
-      <div i-ps-book-tag title="Blog"></div>
-      <div>掘金</div>
-      <div i-ps-moon></div>
-      <div i-ps-sun></div>
+      <div i-ps-github-alt title="github" w-7 h-7></div>
+      <div i-ps-book-tag title="Blog" w-6 h-6></div>
+      <div i-ps-moon w-6 h-6></div>
+      <div i-ps-sun w-6 h-6></div>
     </div>
   </header>
 </template>
