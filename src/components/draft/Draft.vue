@@ -4,6 +4,7 @@ import { computed, inject, onMounted, onUnmounted, Ref, ref, watch } from 'vue';
 import { useStore } from 'vuex';
 import { Debounce } from '@/utils';
 
+let lastLogoName: string = ''
 const store = useStore()
 const logoName = computed(() => store.state.logo.logoName)
 
@@ -22,12 +23,16 @@ const initCanvas = () => {
 const location: Ref<{ x: number, y: number }> = ref({ x: 10, y: 10 })
 
 const addGraphicToCanvas = (logoName: string) => {
+  // 防止对同一个图形重复添加
+  if (logoName === lastLogoName) return
+  lastLogoName = logoName
   const { x, y } = location.value
   fabric.Image.fromURL(logoName, function (oImg) {
     canvas!.add(oImg);
   }, { left: x, top: y });
 }
 
+// 监听位置的变化，每当位置发生改变时，重新调用addGraphicToCanvas函数
 watch(location, (newValue) => {
   addGraphicToCanvas(logoName.value.name)
 })
